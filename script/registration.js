@@ -80,7 +80,7 @@
 		}
 	}
 
-	button.onclick = function (evt) {
+	function POSTonBtnClick (evt) {
 		evt.preventDefault();
 		let user = {
 			fname: document.getElementById("fname").value,
@@ -103,5 +103,6 @@
 			.catch(error => console.log(error));
 	}
 
-	document.addEventListener('click', onBtnClick);
-})()
+	document.querySelector("#button").addEventListener('click', onBtnClick);
+	document.querySelector("#button").addEventListener('click', POSTonBtnClick);
+})();

@@ -1,7 +1,7 @@
 "use strict";
 (function () {
     let formElem = document.getElementById('formElem');
-    button.onclick = function (evt) {
+    function onBtnclick (evt) {
         evt.preventDefault();
 
         fetch("https://httpbin.org/post", {
@@ -14,4 +14,5 @@
             })
             .catch(error => console.log(error));
     }
+    document.querySelector('#button').addEventListener('click', onBtnclick);
 })();
