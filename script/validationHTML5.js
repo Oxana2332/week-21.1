@@ -1,18 +1,17 @@
 "use strict";
 (function () {
     let formElem = document.getElementById('formElem');
-    function onBtnclick (evt) {
+    function onFormSubmit (evt) {
         evt.preventDefault();
-
         fetch("https://httpbin.org/post", {
                 method: 'POST',
                 body: new FormData(formElem)
             })
             .then(response => response.json())
-            .then(formElem => {
-                console.log(formElem);
+            .then(form => {
+                console.log(form.form);
             })
             .catch(error => console.log(error));
     }
-    document.querySelector('#button').addEventListener('click', onBtnclick);
+    formElem.addEventListener('submit', onFormSubmit);
 })();
